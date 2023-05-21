@@ -1,0 +1,46 @@
+name: development
+env:
+    PACKAGE_NAME: gitlab-changelog
+on:
+    push:
+        branches:
+          - main
+    pull_request:
+        branches:
+          - main
+    workflow_dispatch:
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        environment: development
+        steps:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.8
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: check-format
+            run: autopep8 --recursive --exit-code --diff .
+          - name: check-lint
+            run: |
+                PACKAGE_PATH=$(echo ${{ env.PACKAGE_NAME }} | tr - _)
+                pylint setup.py ${PACKAGE_PATH}/ tests/
+    test:
+        runs-on: ubuntu-latest
+        environment: development
+        steps:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.8
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: test-package
+            run: pytest
+          - name: check-coverage
+            run: pytest --cov
