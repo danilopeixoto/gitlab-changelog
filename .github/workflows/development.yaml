@@ -15,11 +15,11 @@ jobs:
         environment: development
         steps:
           - name: setup-python
-            uses: actions/setup-python@v2
+            uses: actions/setup-python@v4
             with:
                 python-version: 3.8
           - name: checkout-main
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
           - name: install-package
             run: pip install -e .[development]
           - name: check-format
@@ -37,11 +37,11 @@ jobs:
             CI_PROJECT_ID: ${{ secrets.CI_PROJECT_ID }}
         steps:
           - name: setup-python
-            uses: actions/setup-python@v2
+            uses: actions/setup-python@v4
             with:
                 python-version: 3.8
           - name: checkout-main
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
           - name: install-package
             run: pip install -e .[development]
           - name: test-package
