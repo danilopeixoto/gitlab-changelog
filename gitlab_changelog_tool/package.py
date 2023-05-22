@@ -6,7 +6,7 @@ Package description information.
 __title__ = 'GitLab Changelog Tool'
 
 #: Package version.
-__version__ = '0.0.0'
+__version__ = '1.0.0'
 
 #: Package description.
 __description__ = 'Automatically generate changelogs from merge requests on GitLab.'
