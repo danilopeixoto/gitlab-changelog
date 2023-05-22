@@ -2,10 +2,12 @@
 Test application implementation package.
 '''
 
+from datetime import datetime
 from pathlib import Path
 
 import pytest
 from click.testing import CliRunner
+from jinja2 import Template
 
 from gitlab_changelog_tool.cli import cli
 
@@ -13,7 +15,7 @@ from gitlab_changelog_tool.cli import cli
 @pytest.mark.parametrize(
     'expected_changelog_path',
     [
-        Path(__file__).parent / 'changelogs' / 'CHANGELOG.md'
+        Path(__file__).parent / 'templates' / 'CHANGELOG.md'
     ]
 )
 def test_generate_should_return_valid_changelog_content(
@@ -32,6 +34,10 @@ def test_generate_should_return_valid_changelog_content(
     changelog = result.output
 
     with open(expected_changelog_path, mode='r', encoding='utf-8') as file:
-        expected_changelog = file.read()
+        source = file.read()
+
+    expected_changelog = Template(source).render(
+        tag_timestamp=datetime.utcnow()
+    )
 
     assert changelog == expected_changelog

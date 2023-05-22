@@ -148,7 +148,7 @@ def generate(  # pylint: disable=R0914
         tag_name = str(parsed_version)
 
     tag_url = f'{project.web_url}/-/tags/{tag_name}'
-    tag_date = datetime.utcnow()
+    tag_timestamp = datetime.utcnow()
 
     with open(template_path, mode='r', encoding='utf-8') as file:
         source = file.read()
@@ -160,7 +160,7 @@ def generate(  # pylint: disable=R0914
     ).render(
         tag_name=tag_name,
         tag_url=tag_url,
-        tag_date=tag_date,
+        tag_timestamp=tag_timestamp,
         features=features,
         improvements=improvements,
         bug_fixes=bug_fixes

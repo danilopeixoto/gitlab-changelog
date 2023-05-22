@@ -13,7 +13,7 @@ Template variables:
 
 - `tag_name`
 - `tag_url`
-- `tag_date`
+- `tag_timestamp`
 - `features`
 - `improvements`
 - `bug_fixes`
@@ -21,7 +21,7 @@ Template variables:
 ```
 # Changelog
 
-## [{{ tag_name }}]({{ tag_url }}) ({{ tag_date.strftime('%Y-%m-%d') }})
+## [{{ tag_name }}]({{ tag_url }}) ({{ tag_timestamp.strftime('%Y-%m-%d') }})
 {% if features %}
 
 ### New features
