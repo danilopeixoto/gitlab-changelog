@@ -94,5 +94,11 @@ setup(
         ]
     },
     packages=find_packages(),
+    package_data={
+        f'{PACKAGE_PATH}': [
+            'templates/*.md'
+        ]
+    },
+    include_package_data=True,
     zip_safe=False
 )
