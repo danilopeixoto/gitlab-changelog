@@ -36,7 +36,10 @@ def test_generate_should_return_valid_changelog_content(
     with open(expected_changelog_path, mode='r', encoding='utf-8') as file:
         source = file.read()
 
-    expected_changelog = Template(source).render(
+    expected_changelog = Template(
+        source,
+        keep_trailing_newline=True
+    ).render(
         tag_timestamp=datetime.utcnow()
     )
 
