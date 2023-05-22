@@ -41,7 +41,7 @@ def parse_long_description() -> str:
         return file.read()
 
 
-PACKAGE_NAME = 'gitlab-changelog'
+PACKAGE_NAME = 'gitlab-changelog-tool'
 PACKAGE_PATH = PACKAGE_NAME.replace('-', '_')
 
 package_info = get_package_info(PACKAGE_PATH)
@@ -54,11 +54,11 @@ setup(
     long_description_content_type='text/markdown',
     author=package_info['__author__'],
     license=package_info['__license__'],
-    url='https://github.com/danilopeixoto/gitlab-changelog',
-    download_url='https://pypi.org/project/gitlab-changelog',
+    url='https://github.com/danilopeixoto/gitlab-changelog-tool',
+    download_url='https://pypi.org/project/gitlab-changelog-tool',
     project_urls={
-        'Code': 'https://github.com/danilopeixoto/gitlab-changelog',
-        'Issue tracker': 'https://github.com/danilopeixoto/gitlab-changelog/issues'
+        'Code': 'https://github.com/danilopeixoto/gitlab-changelog-tool',
+        'Issue tracker': 'https://github.com/danilopeixoto/gitlab-changelog-tool/issues'
     },
     classifiers=[
         'Programming Language :: Python',

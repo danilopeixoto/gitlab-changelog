@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 from click.testing import CliRunner
 
-from gitlab_changelog.cli import cli
+from gitlab_changelog_tool.cli import cli
 
 
 @pytest.mark.parametrize(

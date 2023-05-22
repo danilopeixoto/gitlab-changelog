@@ -3,7 +3,7 @@ Package description information.
 '''
 
 #: Package display name.
-__title__ = 'GitLab Changelog'
+__title__ = 'GitLab Changelog Tool'
 
 #: Package version.
 __version__ = '0.0.0'

@@ -1,13 +1,13 @@
-[![Releases](https://img.shields.io/github/v/release/danilopeixoto/gitlab-changelog?color=blue)](https://github.com/danilopeixoto/gitlab-changelog/releases)
-[![Issues](https://img.shields.io/github/issues/danilopeixoto/gitlab-changelog?color=blue)](https://github.com/danilopeixoto/gitlab-changelog/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr/danilopeixoto/gitlab-changelog?color=blue)](https://github.com/danilopeixoto/gitlab-changelog/pulls)
-[![License](https://img.shields.io/pypi/l/gitlab-changelog?color=blue)](LICENSE.md)
+[![Releases](https://img.shields.io/github/v/release/danilopeixoto/gitlab-changelog-tool?color=blue)](https://github.com/danilopeixoto/gitlab-changelog-tool/releases)
+[![Issues](https://img.shields.io/github/issues/danilopeixoto/gitlab-changelog-tool?color=blue)](https://github.com/danilopeixoto/gitlab-changelog-tool/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/danilopeixoto/gitlab-changelog-tool?color=blue)](https://github.com/danilopeixoto/gitlab-changelog-tool/pulls)
+[![License](https://img.shields.io/pypi/l/gitlab-changelog-tool?color=blue)](LICENSE.md)
 
-# GitLab Changelog
+# GitLab Changelog Tool
 
 Automatically generate changelogs from merge requests on GitLab.
 
-GitLab Changelog automatically creates changelogs by analyzing merge requests that have been merged since the latest tag for a specific branch. It utilizes a customizable template to generate the changelogs.
+GitLab Changelog Tool automatically creates changelogs by analyzing merge requests that have been merged since the latest tag for a specific branch. It utilizes a customizable template to generate the changelogs.
 
 Template variables:
 
@@ -75,7 +75,7 @@ The versioning scheme follows the [Semantic Versioning (SemVer)](https://semver.
 Install package:
 
 ```console
-pip install gitlab-changelog
+pip install gitlab-changelog-tool
 ```
 
 ### Development
@@ -111,7 +111,7 @@ mypy .
 Lint source code:
 
 ```console
-pylint setup.py gitlab_changelog tests/
+pylint setup.py gitlab_changelog_tool tests/
 ```
 
 Test package:
@@ -133,7 +133,7 @@ pytest --cov
 Generate changelog content:
 
 ```console
-gitlab-changelog --project-id <project-id> generate
+gitlab-changelog-tool --project-id <project-id> generate
 ```
 
 The command-line application will also retrieve configuration from specific environment variables:

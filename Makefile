@@ -1,4 +1,4 @@
-PACKAGE_NAME := gitlab-changelog
+PACKAGE_NAME := gitlab-changelog-tool
 PACKAGE_PATH := $(shell echo ${PACKAGE_NAME} | tr - _)
 
 create-environment:
