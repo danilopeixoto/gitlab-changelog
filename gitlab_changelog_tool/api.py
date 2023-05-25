@@ -2,7 +2,7 @@
 Application implementation package.
 '''
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from operator import attrgetter
 from pathlib import Path
 from typing import Iterable, List
@@ -73,7 +73,7 @@ def generate(  # pylint: disable=R0914
         ).isoformat()
     except StopIteration:
         current_tag_name = 'v0.0.0'
-        updated_after = datetime(1970, 1, 1).isoformat()
+        updated_after = datetime(1970, 1, 1, tzinfo=timezone.utc).isoformat()
 
     if current_tag_name.startswith('v'):
         current_version = current_tag_name[1:]
